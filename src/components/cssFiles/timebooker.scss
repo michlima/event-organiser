@@ -1,0 +1,85 @@
+.time-booker-container {
+  position: fixed;
+  top: 50%;
+
+  width: 90vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.book-container {
+  background: rgb(147, 70, 70);
+  width: 100%;
+  padding: 10px;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.invisible {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes wipe-enter {
+  0% {
+    transform: scale(0, 0.025);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1, 0.025);
+    opacity: 1;
+  }
+}
+
+@keyframes wipe-out {
+  0% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0, 0.025);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .booking-animation {
+    animation: wipe-enter 0.5s 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .closing-animation {
+    animation: wipe-out 0.5s 1;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  select:focus,
+  textarea:focus,
+  input:focus {
+    font-size: 16px;
+    background: #eee;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}

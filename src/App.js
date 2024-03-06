@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+
+import Home from "./components/Home";
+import Schedule from "./components/Schedule/Schedule";
+import { getSections } from "./firebase/utils";
 
 function App() {
+  const [sections, setSections] = useState();
+  const [sectionClickedID, setSectionsClickedID] = useState();
+
+  const getData = async () => {
+    const data = await getSections();
+    setSections(data);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {" "}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              sections={sections}
+              sectionClicked={(id) => setSectionsClickedID(id)}
+            />
+          }
+        />
+        <Route
+          path="/schedule"
+          element={<Schedule section={sectionClickedID} />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

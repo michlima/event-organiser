@@ -1,0 +1,43 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+}
+.main-container .time-indicater {
+  text-align: center;
+  background: teal;
+  width: 100vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.main-container .first-section {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #ecf4d6;
+  height: 2rem;
+  text-align: center;
+  border: 2px solid red;
+}
+.main-container .booked {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #ecf4d6;
+  border: 2px solid red;
+  height: 2rem;
+  width: 100vw;
+}
+.main-container .button {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: white;
+  height: 3rem;
+  width: 100vw;
+  border: 0;
+}
+
+p {
+  margin: 0;
+}

@@ -1,0 +1,76 @@
+.big-square {
+  background: red;
+  margin: 5rem;
+}
+
+.section-container {
+  background: white;
+  padding: 4rem;
+  padding-right: 5rem;
+  padding-left: 5rem;
+  border-radius: 30px;
+  margin: 2rem;
+  animation-duration: 2ms;
+  cursor: pointer;
+  box-shadow: 10px 10px 20px rgb(209, 209, 211);
+  font-family: "Fredoka", sans-serif;
+  text-align: center;
+  transition: 1s;
+  border: 0;
+  font-size: large;
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+}
+.section-container .section-description {
+  opacity: 0;
+  font-size: small;
+  transition: 0.5s;
+  color: rgb(98, 98, 98);
+}
+
+.section-container:hover {
+  scale: 110%;
+}
+.section-container:hover .section-description {
+  opacity: 1;
+}
+
+.outer-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-wrap: nowrap;
+}
+
+.inner-flexbox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.title {
+  padding-top: 2rem;
+  color: rgb(43, 42, 42);
+  font-weight: 100;
+  font-family: "Fredoka", sans-serif;
+  background: teal;
+  text-align: center;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: teal;
+  flex-direction: column;
+}
+
+.home-description {
+  text-align: center;
+  color: rgb(187, 187, 187);
+  width: 50%;
+  align-self: center;
+}
